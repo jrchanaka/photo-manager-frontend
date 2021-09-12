@@ -9,6 +9,7 @@
  * If need, update app port and api url in .env file in root directory
  * Run "npm install"
  * Run "npm start"
+ * Please do a page refresh if first time not viewed
 
  ## User Guide
 
