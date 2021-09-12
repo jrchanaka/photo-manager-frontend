@@ -1,0 +1,71 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 1rem;
+}
+
+.text-avatar {
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  text-transform: "capitalize";
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+}
+
+.alert {
+  border: none;
+  border-radius: 0;
+}
+
+.sidebar {
+  .open {
+    .nav-link {
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .sidebar-minimizer {
+    border-top: 1px solid #c8ced3;
+  }
+}
+
+.mh-page {
+  height: calc(100vh - 105px);
+  overflow: hidden;
+  position: relative;
+
+  .mh-content, .mh-sidebar {
+    max-height: calc(100vh - 155px);
+    overflow: auto;
+  }
+}
+
+.app-header {
+  .navbar-brand {
+    width: 200px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $light;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $secondary;
+  border-radius: 10px;
+}
