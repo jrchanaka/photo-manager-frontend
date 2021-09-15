@@ -1,5 +1,5 @@
 :root {
-  font-size: 12px;
+	font-size: 12px;
 }
 
 $white: #ffffff;
@@ -16,14 +16,14 @@ $info: #17a2b8;
 $warning: #ffc107;
 
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "danger": $danger,
-  "info": $info,
-  "warning": $warning,
-  "light": $light,
-  "dark": $dark
+	"primary": $primary,
+	"secondary": $secondary,
+	"success": $success,
+	"danger": $danger,
+	"info": $info,
+	"warning": $warning,
+	"light": $light,
+	"dark": $dark,
 );
 
 $sidebar-nav-link-color: $black;

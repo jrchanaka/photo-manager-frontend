@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import ImagePicker from '../../components/ImagePicker';
-import 'react-image-picker/dist/index.css';
 import ImageGrid from '../../components/ImageGrid';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getPhotoList, savePhotoList } from "../../actions/photos.action";
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import { confirmAlert } from 'react-confirm-alert'; // Import alert module
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css for alert module
 
 const userId = 101;
+const maxImageCount = 9;
 
 class PhotoGallery extends Component {
     constructor(props) {
@@ -16,7 +16,6 @@ class PhotoGallery extends Component {
         this.state = {
             photosList: [],
             max_message: '',
-            maxPhotosCount: 9,
             selectedPhotos: []
         }
     }
@@ -29,7 +28,6 @@ class PhotoGallery extends Component {
         if (prev.photos !== this.props.photos) {
             this.setState({ photosList: this.props.photos });
         }
-
         if (prev.savePhotos !== this.props.savePhotos) {
             this.showMessageBox();
         }
@@ -42,7 +40,7 @@ class PhotoGallery extends Component {
     onPickMaxImages() {
         confirmAlert({
             title: 'Image Limit',
-            message: `You can select up to maximum ${this.state.maxPhotosCount} images`,
+            message: `You can select up to maximum ${maxImageCount} images`,
             buttons: [
                 {
                     label: 'Ok',
@@ -64,7 +62,6 @@ class PhotoGallery extends Component {
             });
         });
 
-        console.log(formattedData);
         this.props.savePhotoList(userId, formattedData);
     }
 
@@ -88,16 +85,16 @@ class PhotoGallery extends Component {
     }
 
     render() {
-        const { photosList, maxPhotosCount, selectedPhotos } = this.state;
+        const { photosList, selectedPhotos } = this.state;
         return (
             <div className="animated fadeIn">
                 <h1 className="text-center m-4">My Photos</h1>
 
                 <div>
                     <ImagePicker
-                        images={photosList.map((image, i) => ({ src: image.url, value: image.id }))}
+                        images={photosList.map((image, i) => ({ src: image.picture, value: image.id }))}
                         onPick={this.onPickImagesWithLimit.bind(this)}
-                        maxPicks={maxPhotosCount}
+                        maxPicks={maxImageCount}
                         onMaxPicks={this.onPickMaxImages.bind(this)}
                         multiple
                     />
