@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Map } from 'immutable'
-import Image from './Image'
+import Image from './Image/Image'
 
 class ImagePicker extends Component {
 	constructor(props) {

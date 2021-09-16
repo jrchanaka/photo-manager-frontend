@@ -16,13 +16,20 @@ export default class Image extends Component {
 	render() {
 		const { src, isSelected, onImageClick, height, width } = this.props;
 		return (
-			<div className={`responsive${isSelected ? " selected" : ""}`}
-				onClick={onImageClick}>
-				<img src={src}
+			<div 
+				data-testid="image-picker-image-box" 
+				className={`responsive${isSelected ? " selected" : ""}`} 
+				onClick={onImageClick}
+			>
+				<img 
+					data-testid="image-picker-image-box-img-tag"
+					src={src}
 					className={`thumbnail${isSelected ? " selected" : ""}`}
 					style={imageStyle(height, width)}
 				/>
-				<div className="checked">
+				<div 
+					data-testid="image-picker-image-box-check-tag"
+					className="checked">
 					<div className="icon" />
 				</div>
 			</div>

@@ -4,8 +4,9 @@ import React from "react";
 const Box = ({ boxColor, boxNumber, handleDrag, handleDrop, imageSrc }) => {
 	return (
 		<div
-			draggable={true}
+			data-testid={boxNumber}
 			id={boxNumber}
+			draggable={true}
 			onDragOver={(event) => event.preventDefault()}
 			onDragStart={handleDrag}
 			onDrop={handleDrop}
@@ -15,7 +16,7 @@ const Box = ({ boxColor, boxNumber, handleDrag, handleDrop, imageSrc }) => {
 			}}
 			className="draggable-box"
 		>
-			<img src={imageSrc} />
+			<img src={imageSrc} data-testid="box-image-tag" />
 		</div>
 	);
 };

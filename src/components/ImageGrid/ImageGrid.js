@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Box from './Box';
+import Box from '../Box/Box';
 import { Button } from 'reactstrap';
 
 
@@ -71,7 +71,7 @@ class ImageGrid extends Component {
         const { boxes } = this.state;
 
         return (
-            <div>
+            <div data-testid="image-grid">
                 <div><h4 className="text-center m-4">
                 {
                     boxes.length > 0 ? "Drag and drop to change the order" : "Photos not selected yet"

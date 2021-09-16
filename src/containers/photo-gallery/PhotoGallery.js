@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ImagePicker from '../../components/ImagePicker';
-import ImageGrid from '../../components/ImageGrid';
+import ImageGrid from '../../components/ImageGrid/ImageGrid';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getPhotoList, savePhotoList } from "../../actions/photos.action";
