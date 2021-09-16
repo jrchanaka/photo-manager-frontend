@@ -1,4 +1,4 @@
-## Tested Environment
+ ## Tested Environment
  
  * Node: V12
  * Browser: Google Chrome
@@ -10,6 +10,9 @@
  * Run "npm install"
  * Run "npm start"
  * Please do a page refresh if first time not viewed
+
+ ## Unit tests
+ * Please run "npm test a" to run unit test cases
 
  ## User Guide
 
